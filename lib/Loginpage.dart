@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Admin.dart';
 
 
 class Loginpage extends StatefulWidget {
@@ -10,6 +11,28 @@ class Loginpage extends StatefulWidget {
 }
 
 class _Loginpagestate extends State<Loginpage> {
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  void _login() {
+    String username = _usernameController.text;
+    String password = _passwordController.text;
+
+    if (username == 'Administrator' && password == 'Admin123') {
+      Navigator.push(
+        context, 
+        MaterialPageRoute(builder: (context) => Admin()));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Username atau password salah!'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +81,7 @@ class _Loginpagestate extends State<Loginpage> {
                       ),),
                       SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
                       TextField(
+                        controller: _usernameController,
                         decoration: InputDecoration(
                           labelText: 'Type your username',
                           labelStyle: GoogleFonts.poppins(
@@ -78,6 +102,8 @@ class _Loginpagestate extends State<Loginpage> {
                       ),),
                       SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
                       TextField(
+                        controller: _passwordController,
+                        obscureText: true,
                         decoration: InputDecoration(
                           labelText: 'Type your password',
                           labelStyle: GoogleFonts.poppins(
@@ -115,7 +141,7 @@ class _Loginpagestate extends State<Loginpage> {
                         width: MediaQuery.of(context).size.width * 0.9,
                         height: MediaQuery.of(context).size.height * 0.06,
                         child: ElevatedButton(
-                          onPressed: (){}, 
+                          onPressed: _login, 
                           child: Text('Sign In',
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.bold
@@ -156,27 +182,6 @@ class _Loginpagestate extends State<Loginpage> {
                           )
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Don't have an account yet ?",
-                                style: GoogleFonts.poppins(
-                                  color: Color(0xFFA4A7AE),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: (){}, 
-                                child: Text('Register Now',
-                                style: GoogleFonts.poppins(
-                                  color: Colors.blue,
-                                ),))
-                            ],
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 )
