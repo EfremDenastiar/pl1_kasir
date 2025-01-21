@@ -12,6 +12,15 @@ class _Signupstate extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          }, 
+          icon: Icon(
+            Icons.arrow_back_ios
+          )),
+      ),
       body: Padding(
         padding: EdgeInsets.only(top: 4, left: 24, right: 24),
         child: Column(

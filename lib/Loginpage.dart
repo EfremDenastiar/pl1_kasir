@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'Admin.dart';
+import 'Admin/Admin.dart';
 
 
 class Loginpage extends StatefulWidget {
@@ -52,8 +52,12 @@ class _Loginpagestate extends State<Loginpage> {
                       ),
                     SizedBox(width: MediaQuery.of(context).size.width *0.02,),
                     Text('OOKBUS',
-                    style: GoogleFonts.poppins(
-                      color: Color(0xFF181D27),),)
+                      style: GoogleFonts.poppins(
+                        color: Color(0xFF181D27),
+                        fontWeight: FontWeight.bold,
+                        fontSize: MediaQuery.of(context).size.height * 0.03
+                      )
+                    )
                   ],
                 ),
                 Text('Sign In and Start Working', 
@@ -91,7 +95,8 @@ class _Loginpagestate extends State<Loginpage> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
-                              color: Colors.grey.withOpacity(0.2)),
+                              color: Colors.grey.withOpacity(0.2)
+                            ),
                           )
                         )
                       ),
@@ -107,7 +112,7 @@ class _Loginpagestate extends State<Loginpage> {
                         decoration: InputDecoration(
                           labelText: 'Type your password',
                           labelStyle: GoogleFonts.poppins(
-                            color: Color(0xFFA4A7AE),
+                          color: Color(0xFFA4A7AE),
                             fontSize: MediaQuery.of(context).size.height * 0.015,
                           ),
                           suffixIcon: Icon(Icons.visibility_off, color: Colors.grey.withOpacity(0.2),),

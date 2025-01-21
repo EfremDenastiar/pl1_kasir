@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.2.1
   cupertino_icons: ^1.0.6
   supabase_flutter: ^2.8.3
+  dropdown_textfield: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,11 @@ flutter:
   assets:
     - assets/google.png
     - assets/logo.png
+    - assets/file.png
+    - assets/file-grey.png
+    - assets/shopping.png
+    - assets/user.png
+    - assets/logomark.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
